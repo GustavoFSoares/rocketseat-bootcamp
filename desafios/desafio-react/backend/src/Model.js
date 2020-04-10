@@ -7,6 +7,7 @@ const Model = {
     if(index === -1) {
       return null
     }
+    return index
   },
   getDataById(id) {
     return Model.repositories.find(repository => repository.id === id)
