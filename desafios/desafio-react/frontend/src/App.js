@@ -9,7 +9,6 @@ export default () => {
     Project.list().then(res => {
       setRepositories(res.data)
     })
-    
   }, [])
 
   async function handleAddRepository() {
@@ -27,8 +26,6 @@ export default () => {
   async function handleRemoveRepository(id, index) {
     let yesno = window.confirm("Tem certeza que deseja excluir")
     if (yesno) {
-      console.log(id, index);
-      
       Project.delete(id).then(() => {
         repositories.splice(index, 1)
         setRepositories([...repositories])
